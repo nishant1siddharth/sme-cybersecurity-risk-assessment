@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+    <rect width="64" height="64" rx="14" fill="#172033"/>
+    <path
+        d="M32 8L51 16V29C51 41 43.5 51 32 56C20.5 51 13 41 13 29V16L32 8Z"
+        fill="#ffffff"
+    />
+    <path
+        d="M32 18L42 22V29C42 35.8 38.3 41.7 32 45C25.7 41.7 22 35.8 22 29V22L32 18Z"
+        fill="#172033"
+    />
+</svg>
