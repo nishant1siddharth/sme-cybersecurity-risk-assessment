@@ -1,0 +1,88 @@
+{% extends "base.html" %}
+
+{% block title %}
+Project Foundation
+{% endblock %}
+
+
+{% block content %}
+
+<section class="hero">
+
+    <div class="hero-copy">
+
+        <p class="eyebrow">
+            Small Business Cybersecurity
+        </p>
+
+        <h2>
+            Project foundation is running.
+        </h2>
+
+        <p class="lead">
+            This Phase 1 build establishes the local Flask application
+            that will later host the SME cybersecurity risk assessment
+            framework.
+        </p>
+
+
+        <div class="status-card">
+
+            <span
+                class="status-dot"
+                aria-hidden="true">
+            </span>
+
+            <div>
+
+                <strong>
+                    Application status: OK
+                </strong>
+
+                <p>
+                    Flask loaded successfully and the main route
+                    is responding.
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <aside class="info-card">
+
+        <h3>
+            Phase 1 includes
+        </h3>
+
+        <ul>
+            <li>Flask application factory</li>
+            <li>Environment configuration support</li>
+            <li>Base template and local CSS</li>
+            <li>Health-check endpoint</li>
+            <li>Automated smoke test</li>
+        </ul>
+
+    </aside>
+
+</section>
+
+
+<section class="verification-panel">
+
+    <h3>
+        Next verification
+    </h3>
+
+    <p>
+        Open <code>/health</code> in your browser.
+        A JSON response containing
+        <code>"status": "ok"</code>
+        should appear.
+    </p>
+
+</section>
+
+{% endblock %}

@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <meta
+        name="description"
+        content="Cybersecurity Risk Assessment Framework for Small Businesses"
+    >
+
+    <title>
+        {% block title %}
+        Cybersecurity Risk Assessment Framework
+        {% endblock %}
+    </title>
+
+    <link
+        rel="stylesheet"
+        href="{{ url_for('static', filename='css/style.css') }}"
+    >
+</head>
+
+<body>
+
+<header class="site-header">
+    <div class="container header-inner">
+
+        <div>
+            <p class="eyebrow">Minor Project</p>
+
+            <h1 class="site-title">
+                Cybersecurity Risk Assessment Framework
+            </h1>
+        </div>
+
+        <span class="badge">
+            Phase 1
+        </span>
+
+    </div>
+</header>
+
+
+<main class="container main-content">
+    {% block content %}
+    {% endblock %}
+</main>
+
+
+<footer class="site-footer">
+    <div class="container">
+        <p>
+            Local development build &middot; Phase 1 foundation
+        </p>
+    </div>
+</footer>
+
+</body>
+</html>

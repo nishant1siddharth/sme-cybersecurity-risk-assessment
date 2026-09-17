@@ -1,0 +1,307 @@
+:root {
+    font-family:
+        Inter,
+        ui-sans-serif,
+        system-ui,
+        -apple-system,
+        BlinkMacSystemFont,
+        "Segoe UI",
+        sans-serif;
+
+    color: #172033;
+    background: #f5f7fb;
+}
+
+
+* {
+    box-sizing: border-box;
+}
+
+
+body {
+    margin: 0;
+    min-height: 100vh;
+
+    background:
+        linear-gradient(
+            180deg,
+            #f5f7fb 0%,
+            #ffffff 100%
+        );
+}
+
+
+.container {
+    width: min(1100px, calc(100% - 40px));
+    margin: 0 auto;
+}
+
+
+.site-header {
+    border-bottom: 1px solid #e4e8f0;
+    background: #ffffff;
+}
+
+
+.header-inner {
+    min-height: 86px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 24px;
+}
+
+
+.site-title {
+    margin: 0;
+
+    font-size:
+        clamp(
+            1.35rem,
+            2vw,
+            1.8rem
+        );
+}
+
+
+.eyebrow {
+    margin: 0 0 6px;
+
+    color: #53627a;
+
+    font-size: 0.78rem;
+
+    font-weight: 700;
+
+    letter-spacing: 0.12em;
+
+    text-transform: uppercase;
+}
+
+
+.badge {
+    padding: 8px 12px;
+
+    border: 1px solid #d9deea;
+
+    border-radius: 999px;
+
+    background: #f8f9fc;
+
+    color: #33415c;
+
+    font-size: 0.85rem;
+
+    font-weight: 700;
+}
+
+
+.main-content {
+    padding: 64px 0;
+}
+
+
+.hero {
+    display: grid;
+
+    grid-template-columns:
+        minmax(0, 1.8fr)
+        minmax(260px, 1fr);
+
+    gap: 28px;
+
+    align-items: stretch;
+}
+
+
+.hero-copy,
+.info-card,
+.verification-panel {
+    border: 1px solid #e3e7ef;
+
+    border-radius: 20px;
+
+    background: #ffffff;
+
+    box-shadow:
+        0 16px 40px
+        rgba(32, 45, 72, 0.07);
+}
+
+
+.hero-copy {
+    padding: 48px;
+}
+
+
+.hero-copy h2 {
+    max-width: 720px;
+
+    margin: 0;
+
+    font-size:
+        clamp(
+            2.25rem,
+            5vw,
+            4rem
+        );
+
+    line-height: 1.04;
+}
+
+
+.lead {
+    max-width: 700px;
+
+    margin: 22px 0 0;
+
+    color: #5a667b;
+
+    font-size: 1.08rem;
+
+    line-height: 1.7;
+}
+
+
+.status-card {
+    display: flex;
+
+    gap: 14px;
+
+    align-items: flex-start;
+
+    margin-top: 32px;
+
+    padding: 18px;
+
+    border-radius: 14px;
+
+    background: #f6f8fb;
+}
+
+
+.status-card p {
+    margin: 5px 0 0;
+
+    color: #667085;
+
+    line-height: 1.5;
+}
+
+
+.status-dot {
+    width: 12px;
+    height: 12px;
+
+    margin-top: 4px;
+
+    flex: 0 0 auto;
+
+    border-radius: 50%;
+
+    background: #207a46;
+
+    box-shadow:
+        0 0 0 6px
+        rgba(32, 122, 70, 0.1);
+}
+
+
+.info-card {
+    padding: 32px;
+}
+
+
+.info-card h3,
+.verification-panel h3 {
+    margin-top: 0;
+}
+
+
+.info-card ul {
+    margin: 18px 0 0;
+
+    padding-left: 20px;
+
+    color: #566177;
+
+    line-height: 1.9;
+}
+
+
+.verification-panel {
+    margin-top: 28px;
+
+    padding: 24px 28px;
+}
+
+
+.verification-panel p {
+    margin-bottom: 0;
+
+    color: #566177;
+}
+
+
+code {
+    padding: 3px 7px;
+
+    border-radius: 6px;
+
+    background: #eef2f7;
+
+    font-family:
+        "Cascadia Code",
+        Consolas,
+        monospace;
+}
+
+
+.site-footer {
+    padding: 0 0 36px;
+
+    color: #7a8498;
+
+    font-size: 0.9rem;
+}
+
+
+@media (max-width: 780px) {
+
+    .container {
+        width:
+            min(
+                100% - 28px,
+                1100px
+            );
+    }
+
+
+    .header-inner {
+        min-height: 74px;
+
+        align-items: flex-start;
+
+        padding: 16px 0;
+
+        flex-direction: column;
+    }
+
+
+    .main-content {
+        padding: 36px 0;
+    }
+
+
+    .hero {
+        grid-template-columns: 1fr;
+    }
+
+
+    .hero-copy {
+        padding: 32px 24px;
+    }
+
+}
