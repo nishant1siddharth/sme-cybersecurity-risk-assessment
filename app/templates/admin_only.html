@@ -1,0 +1,41 @@
+{% extends "base.html" %}
+
+{% block title %}
+Administrator Test
+{% endblock %}
+
+
+{% block content %}
+
+<section class="page-card">
+
+    <p class="eyebrow">
+        Authorization Test
+    </p>
+
+    <h2>
+        Administrator-only area
+    </h2>
+
+    <p class="page-description">
+        This page is available only to users whose database
+        role is set to <strong>admin</strong>.
+    </p>
+
+
+    <div class="info-box">
+
+        <strong>
+            Authorization successful
+        </strong>
+
+        <p>
+            Your authenticated role is:
+            <strong>{{ current_user.role }}</strong>
+        </p>
+
+    </div>
+
+</section>
+
+{% endblock %}

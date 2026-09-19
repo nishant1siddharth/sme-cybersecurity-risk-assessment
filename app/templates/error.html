@@ -1,0 +1,39 @@
+{% extends "base.html" %}
+
+{% block title %}
+{{ title }}
+{% endblock %}
+
+
+{% block content %}
+
+<section class="page-card error-card">
+
+    <p class="eyebrow">
+        Request Error
+    </p>
+
+    <h2>
+        {{ title }}
+    </h2>
+
+    <p class="page-description">
+        {{ message }}
+    </p>
+
+
+    <div class="error-status">
+        Status code: {{ status_code }}
+    </div>
+
+
+    <a
+        href="{{ url_for('main.home') }}"
+        class="secondary-button"
+    >
+        Return to Home
+    </a>
+
+</section>
+
+{% endblock %}

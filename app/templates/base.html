@@ -1,8 +1,14 @@
 <!doctype html>
 <html lang="en">
+
 <head>
+
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1"
+    >
 
     <meta
         name="description"
@@ -16,51 +22,155 @@
     </title>
 
     <link
-    rel="icon"
-    type="image/svg+xml"
-    href="{{ url_for('static', filename='favicon.svg') }}"
+        rel="icon"
+        type="image/svg+xml"
+        href="{{ url_for('static', filename='favicon.svg') }}"
     >
 
     <link
         rel="stylesheet"
         href="{{ url_for('static', filename='css/style.css') }}"
     >
+
 </head>
+
 
 <body>
 
 <header class="site-header">
+
     <div class="container header-inner">
 
         <div>
-            <p class="eyebrow">Minor Project</p>
+
+            <p class="eyebrow">
+                Minor Project
+            </p>
 
             <h1 class="site-title">
                 Cybersecurity Risk Assessment Framework
             </h1>
+
         </div>
 
-        <span class="badge">
-            Phase 1
-        </span>
+
+        <nav
+            class="main-nav"
+            aria-label="Primary navigation"
+        >
+
+            {% if current_user %}
+
+                <a
+                    href="{{ url_for('auth.protected') }}"
+                >
+                    Protected Page
+                </a>
+
+                {% if current_user.role == "admin" %}
+
+                    <a
+                        href="{{ url_for('auth.admin_only') }}"
+                    >
+                        Admin Test
+                    </a>
+
+                {% endif %}
+
+
+                <span class="user-badge">
+
+                    {{ current_user.username }}
+                    ·
+                    {{ current_user.role|capitalize }}
+
+                </span>
+
+
+                <form
+                    method="post"
+                    action="{{ url_for('auth.logout') }}"
+                    class="logout-form"
+                >
+
+                    <input
+                        type="hidden"
+                        name="csrf_token"
+                        value="{{ csrf_token() }}"
+                    >
+
+                    <button
+                        type="submit"
+                        class="nav-button"
+                    >
+                        Logout
+                    </button>
+
+                </form>
+
+            {% else %}
+
+                <a
+                    href="{{ url_for('auth.login') }}"
+                >
+                    Login
+                </a>
+
+            {% endif %}
+
+        </nav>
 
     </div>
+
 </header>
 
 
 <main class="container main-content">
+
+    {% with messages = get_flashed_messages(
+        with_categories=true
+    ) %}
+
+        {% if messages %}
+
+            <div class="flash-container">
+
+                {% for category, message in messages %}
+
+                    <div
+                        class="alert {% if category == 'success' %}alert-success{% endif %}"
+                        role="status"
+                    >
+                        {{ message }}
+                    </div>
+
+                {% endfor %}
+
+            </div>
+
+        {% endif %}
+
+    {% endwith %}
+
+
     {% block content %}
     {% endblock %}
+
 </main>
 
 
 <footer class="site-footer">
+
     <div class="container">
+
         <p>
-            Local development build &middot; Phase 1 foundation
+            Local development build · Phase 3 authentication
         </p>
+
     </div>
+
 </footer>
 
 </body>
+
 </html>

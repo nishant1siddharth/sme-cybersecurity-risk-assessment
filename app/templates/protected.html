@@ -1,0 +1,68 @@
+{% extends "base.html" %}
+
+{% block title %}
+Authenticated Area
+{% endblock %}
+
+
+{% block content %}
+
+<section class="page-card">
+
+    <p class="eyebrow">
+        Protected Route
+    </p>
+
+    <h2>
+        Authentication successful
+    </h2>
+
+    <p class="page-description">
+        This page is accessible only to authenticated users.
+        It is a Phase 3 verification page and is not the
+        project dashboard.
+    </p>
+
+
+    <div class="user-summary">
+
+        <div>
+            <span class="summary-label">
+                Username
+            </span>
+
+            <strong>
+                {{ current_user.username }}
+            </strong>
+        </div>
+
+
+        <div>
+            <span class="summary-label">
+                Role
+            </span>
+
+            <strong>
+                {{ current_user.role|capitalize }}
+            </strong>
+        </div>
+
+    </div>
+
+
+    <div class="info-box">
+
+        <strong>
+            Protected access confirmed
+        </strong>
+
+        <p>
+            Flask found your authenticated session and loaded
+            your user record from the database.
+        </p>
+
+    </div>
+
+</section>
+
+{% endblock %}

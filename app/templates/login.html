@@ -1,0 +1,102 @@
+{% extends "base.html" %}
+
+{% block title %}
+Login
+{% endblock %}
+
+
+{% block content %}
+
+<section class="auth-shell">
+
+    <div class="auth-card">
+
+        <div class="auth-header">
+
+            <p class="eyebrow">
+                Secure Access
+            </p>
+
+            <h2>
+                Sign in to the assessment framework
+            </h2>
+
+            <p>
+                Use your authorized project account to continue.
+            </p>
+
+        </div>
+
+
+        {% if error %}
+        <div
+            class="alert alert-error"
+            role="alert"
+        >
+            {{ error }}
+        </div>
+        {% endif %}
+
+
+        <form
+            method="post"
+            action="{{ url_for('auth.login') }}"
+            class="auth-form"
+        >
+
+            <input
+                type="hidden"
+                name="csrf_token"
+                value="{{ csrf_token() }}"
+            >
+
+
+            <div class="form-group">
+
+                <label for="username">
+                    Username
+                </label>
+
+                <input
+                    id="username"
+                    name="username"
+                    type="text"
+                    autocomplete="username"
+                    maxlength="80"
+                    required
+                >
+
+            </div>
+
+
+            <div class="form-group">
+
+                <label for="password">
+                    Password
+                </label>
+
+                <input
+                    id="password"
+                    name="password"
+                    type="password"
+                    autocomplete="current-password"
+                    required
+                >
+
+            </div>
+
+
+            <button
+                type="submit"
+                class="primary-button"
+            >
+                Login
+            </button>
+
+        </form>
+
+    </div>
+
+</section>
+
+{% endblock %}
